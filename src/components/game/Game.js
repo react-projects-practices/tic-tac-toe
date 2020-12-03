@@ -64,6 +64,17 @@ class Game extends React.Component {
         return null;
     }
 
+    restart() {
+        this.setState({
+            history: [{
+                squares: Array(9).fill(null),
+                playedSquare: 0
+            }],
+            stepNumber: 0,
+            xIsNext: true,
+        });
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
@@ -93,17 +104,21 @@ class Game extends React.Component {
         }
         
         return (
-            <div className="game">
-                <div className="game-board">
-                    <Board 
-                        squares={current.squares}
-                        highlighted={highlighted}
-                        onClick={(i) => this.handleClick(i)}
-                    />
-                </div>
-                <div className="game-info">
-                    <div>{status}</div>
-                    <ol>{moves}</ol>
+            <div>
+                <h1>Tic-Tac-Toe</h1>
+                <div className="game">
+                    <div className="game-board">
+                        <Board 
+                            squares={current.squares}
+                            highlighted={highlighted}
+                            onClick={(i) => this.handleClick(i)}
+                        />
+                    </div>
+                    <div className="game-info">
+                        <div className="status">{status}</div>
+                        <ol>{moves}</ol>
+                        <button id="restart-game" onClick={() => this.restart()}> Restart </button>
+                    </div>
                 </div>
             </div>
         );

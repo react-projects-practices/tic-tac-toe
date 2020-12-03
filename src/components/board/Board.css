@@ -5,26 +5,29 @@
 }
 
 .square {
-    background: #fff;
-    border: 1px solid #999;
+    color: white;
+    border: none;
+    cursor: pointer;
     float: left;
-    font-size: 24px;
+    font-size: 74px;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
+    line-height: 150px;
+    height: 150px;
+    width: 150px;
     text-align: center;
-    width: 34px;
 }
+
+.board-row:nth-child(odd) .square:nth-child(even) { background: #800080; }
+.board-row:nth-child(odd) .square:nth-child(odd) { background: #660066; }
+.board-row:nth-child(even) .square:nth-child(even) { background: #660066; }
+.board-row:nth-child(even) .square:nth-child(odd) { background: #800080; }
 
 .square:focus {
     outline: none;
 }
 
 .square.highlighted {
-    background: yellow;
+    background: #efbbff !important;
 }
 
 .kbd-navigation .square:focus {

@@ -1,20 +1,53 @@
 .game {
     display: flex;
     flex-direction: row;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
 }
 
 .game-info {
     margin-left: 20px;
+    width: 250px;
+    position: relative;
 }
 
 .status {
     margin-bottom: 10px;
+    font-size: 35px;
 }
 
 ol, ul {
     padding-left: 30px;
 }
 
+li button {
+    padding: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
 button.active {
     font-weight: bold;
+}
+
+#restart-game {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: larger;
+    padding: 5px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 100%;
+}
+#restart-game:hover {
+    background: #c2c2c2;
 }
